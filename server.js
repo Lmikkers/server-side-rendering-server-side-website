@@ -27,13 +27,22 @@ app.get('/', function(request, response) {
 	response.render('homepage')
 })
 
-// app.get('/pizzas', function(request, response) {
+app.get('/contact', function(request, response) {
 
-// 	fetchJson('https://fdnd-agency.directus.app/items/demo_pizzas').then((pizzasDataUitDeAPI) => {
-// 		response.render('pizzas', {pizzas: pizzasDataUitDeAPI.data})
-// 	});
+  response.render('contact')
+
+})
+
+
+app.get('/vraag-aanbod', function(request, response) {
+
+	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((servicesDataUitDeAPI) => {
+		response.render('vraag-aanbod', {services: servicesDataUitDeAPI.data})
+	});
 	
-// })
+})
+
+
 
 // app.get('/pizzas/:pizza', function(request, response) {
 // 	fetchJson('https://fdnd-agency.directus.app/items/demo_pizzas?filter={"id":' + request.params.pizza + '}').then((pizzaDetail) => {
