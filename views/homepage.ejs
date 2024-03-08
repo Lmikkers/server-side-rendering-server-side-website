@@ -1,12 +1,73 @@
 <%- include('./partials/head', {current: '/'}); %>
 
 <header>
-    <h1>Homepage</h1>
+    <article>   
+        <div>
+            <h2>Platform</h2>
+            <h1>Buurt Initiatieven Amsterdam west</h1>
+        </div>
+
+        <!-- <a href="#down">Arrow down</a> -->
+
+        <a class="btn" href="#down">Bekijk initiatieven</a>
+    </article>
+    <div>
+        <img src="" alt="">
+    </div>
 </header>
 
-<section>
+<main class="home">
+    <article id="down">
+        <blockquote>Initiatieven zijn vaak lastig te vinden. Om dit probleem op te lossen is dit digitaal platform ontwikkeld met een verzameling van diverse Buurtinitiatieven</blockquote>
+    </article>
 
-</section>
+    <section class="services">
+        <div class="center">
+            <h3>Vraag en aanbod</h3>
+            <h2>Initiatieven</h2>
+        </div>
 
+        <h3 class="type">Vraag</h3>
+        <!-- Hier komen 3 initiatieven van type vraag te staan -->       
+        <div class="items">
+            <% services.forEach(function(service) { %>
+                <!-- Laat alleen de service zien als het type een vraag is -->
+                <% if (service.type == 'vraag' ) { %>
+
+                    <article>
+                        <% if (service.image) { %>
+                            <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>">
+                        <% } %>
+                        
+                        <div class="description">
+                            <a href="/vraag-aanbod/<%= service.id %>"><h3><%= service.title %></h3></a>
+                            <p>
+                                <span><%= service.start_date %> - <%= service.end_date %></span>
+                            </p>
+                            
+                            <p><%- service.short_description %></p>
+                        </div>
+                        
+
+                        <button class="btn">Meer informatie</button>
+                    </article>
+
+                <% } %>
+            <% }) %>
+        </div>
+
+
+
+
+        <h3>Aanbod</h3>
+        <!-- Hier komen 3 initiatieven van type vraag te staan -->
+    </section>
+
+
+    <section>
+        <h2>Opdracht of vraag aanvragen?</h2>
+        <button>Aanvragen</button>
+    </section>
+</main>
 
 <%- include('./partials/foot') %>

@@ -24,13 +24,13 @@ app.use(express.urlencoded({extended: true}))
 
 // Homepage de Hallen
 app.get('/', function(request, response) {
-	response.render('homepage')
+	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((servicesDataUitDeAPI) => {
+		response.render('homepage', {services: servicesDataUitDeAPI.data})
+	});
 })
 
 app.get('/contact', function(request, response) {
-
-  response.render('contact')
-
+	response.render('contact')
 })
 
 
