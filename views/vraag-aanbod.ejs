@@ -12,7 +12,7 @@
 		<h3><%= service.title %></h3>
 
 
-        <%- service.long_description %>
+        <%- service.short_description %>
 
 	</article>
     <% } %>
@@ -30,12 +30,12 @@
 		<h3><%= service.title %></h3>
 
 
-        <%- service.long_description %>
+        <%- service.short_description %>
 
 	</article>
     <% } %>
     <!-- Als er geen aanbod is komt er dit te staan -->
-    <p>Er is helaas geen aanbod</p>
+    
 <% }) %>
 
 <%- include('./partials/foot') %>

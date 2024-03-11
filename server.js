@@ -20,7 +20,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 
 
-// TODO: routes voor deze pizza applicatie..
+// TODO: routes voor de amsterdam buurt initiatieven
 
 // Homepage de Hallen
 app.get('/', function(request, response) {
@@ -40,6 +40,12 @@ app.get('/vraag-aanbod', function(request, response) {
 		response.render('vraag-aanbod', {services: servicesDataUitDeAPI.data})
 	});
 	
+})
+
+app.get('/vraag-aanbod/:service', function(request, response) {
+	fetchJson('https://fdnd-agency.directus.app/items/dh_services?filter={"id":' + request.params.service + '}').then((serviceDetail) => {
+		response.render('pizza', {service: serviceDetail.data[0]})
+	})
 })
 
 

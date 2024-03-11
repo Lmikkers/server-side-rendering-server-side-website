@@ -27,6 +27,7 @@
             <h2>Initiatieven</h2>
         </div>
 
+
         <h3 class="type">Vraag</h3>
         <!-- Hier komen 3 initiatieven van type vraag te staan -->       
         <div class="items">
@@ -49,7 +50,7 @@
                         </div>
                         
 
-                        <button class="btn">Meer informatie</button>
+                        <a class="btn" href="/vraag-aanbod/<%= service.id %>">Meer informatie</a>
                     </article>
 
                 <% } %>
@@ -59,8 +60,33 @@
 
 
 
-        <h3>Aanbod</h3>
+        <h3 class="type">Aanbod</h3>
         <!-- Hier komen 3 initiatieven van type vraag te staan -->
+        <div class="items">
+            <% services.forEach(function(service) { %>
+                <!-- Laat alleen de service zien als het type een vraag is -->
+                <% if (service.type == 'aanbod' ) { %>
+
+                    <article>
+                        <% if (service.image) { %>
+                            <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>">
+                        <% } %>
+                        
+                        <div class="description">
+                            <a href="/vraag-aanbod/<%= service.id %>"><h3><%= service.title %></h3></a>
+                            <p>
+                                <span><%= service.start_date %> - <%= service.end_date %></span>
+                            </p>
+                            
+                            <p><%- service.short_description %></p>
+                        </div>
+                        
+                        <a class="btn" href="/vraag-aanbod/<%= service.id %>">Meer informatie</a>
+                    </article>
+
+                <% } %>
+            <% }) %>
+        </div>
     </section>
 
 
