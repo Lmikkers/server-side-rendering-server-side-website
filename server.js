@@ -22,18 +22,18 @@ app.use(express.urlencoded({extended: true}))
 
 // TODO: routes voor de amsterdam buurt initiatieven
 
-// Homepage de Hallen
+// Homepage 
 app.get('/', function(request, response) {
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((servicesDataUitDeAPI) => {
 		response.render('homepage', {services: servicesDataUitDeAPI.data})
 	});
 })
-
+// Contact pagina 
 app.get('/contact', function(request, response) {
 	response.render('contact')
 })
 
-
+// Vraag en aanbod pagina 
 app.get('/vraag-aanbod', function(request, response) {
 
 	fetchJson('https://fdnd-agency.directus.app/items/dh_services').then((servicesDataUitDeAPI) => {
@@ -42,19 +42,12 @@ app.get('/vraag-aanbod', function(request, response) {
 	
 })
 
-app.get('/vraag-aanbod/:service', function(request, response) {
-	fetchJson('https://fdnd-agency.directus.app/items/dh_services?filter={"id":' + request.params.service + '}').then((serviceDetail) => {
-		response.render('pizza', {service: serviceDetail.data[0]})
+// Vraag en aanbod detail(id) pagina 
+app.get('/vraag-aanbod/:serviceId', function(request, response) {
+	fetchJson('https://fdnd-agency.directus.app/items/dh_services?filter={"id":' + request.params.serviceId + '}').then((serviceDetail) => {
+		response.render('service', {service: serviceDetail.data[0]})
 	})
 })
-
-
-
-// app.get('/pizzas/:pizza', function(request, response) {
-// 	fetchJson('https://fdnd-agency.directus.app/items/demo_pizzas?filter={"id":' + request.params.pizza + '}').then((pizzaDetail) => {
-// 		response.render('pizza', {pizza: pizzaDetail.data[0]})
-// 	})
-// })
 
 
 

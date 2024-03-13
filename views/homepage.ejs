@@ -1,9 +1,9 @@
 <%- include('./partials/head', {current: '/'}); %>
 
-<header>
+<header class="home">
     <article>   
         <div>
-            <h2>Platform</h2>
+            <h2 class="smallTitle">Platform</h2>
             <h1>Buurt Initiatieven Amsterdam west</h1>
         </div>
 
@@ -21,78 +21,93 @@
         <blockquote>Initiatieven zijn vaak lastig te vinden. Om dit probleem op te lossen is dit digitaal platform ontwikkeld met een verzameling van diverse Buurtinitiatieven</blockquote>
     </article>
 
-    <section class="services">
+    <section class="services container">
+        
         <div class="center">
-            <h3>Vraag en aanbod</h3>
-            <h2>Initiatieven</h2>
+            <h3 class="smallTitle">Vraag en aanbod</h3>
+            <h2>Buurtinitatieven</h2>
         </div>
 
+        <!-- Hier komen 3 initiatieven van type vraag te staan -->   
+        <section>
+            <h3 class="type">Vraag</h3>
 
-        <h3 class="type">Vraag</h3>
-        <!-- Hier komen 3 initiatieven van type vraag te staan -->       
-        <div class="items">
-            <% services.forEach(function(service) { %>
-                <!-- Laat alleen de service zien als het type een vraag is -->
-                <% if (service.type == 'vraag' ) { %>
+            <div class="items">
 
-                    <article>
-                        <% if (service.image) { %>
-                            <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>">
-                        <% } %>
-                        
-                        <div class="description">
-                            <a href="/vraag-aanbod/<%= service.id %>"><h3><%= service.title %></h3></a>
-                            <p>
-                                <span><%= service.start_date %> - <%= service.end_date %></span>
-                            </p>
+                <% const threeItems = services.slice(1, 3); %>
+
+                <% services.forEach(function(service) { %>
+
+                    <!-- Laat alleen de service zien als het type een vraag is -->
+                    <% if (service.type == 'vraag' ) { %>
+    
+                        <article>
+                            <% if (service.image) { %>
+                                <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>">
+                            <% } %>
                             
-                            <p><%- service.short_description %></p>
-                        </div>
-                        
+                            <div class="description">
+                                <a href="/vraag-aanbod/<%= service.id %>"><h3><%= service.title %></h3></a>
+                               
+                                <% if (service.start_date) { %>
+                                    <p>
+                                        <span><%= service.start_date %> - <%= service.end_date %></span>
+                                    </p>
+                                <% } %>
+                                
+                                <p><%- service.short_description %></p>
+                            </div>
+                        </article>
 
-                        <a class="btn" href="/vraag-aanbod/<%= service.id %>">Meer informatie</a>
-                    </article>
+                    <% } %>
 
-                <% } %>
-            <% }) %>
-        </div>
+                <% }) %>
+            </div>
+        </section>    
+        
 
-
-
-
-        <h3 class="type">Aanbod</h3>
-        <!-- Hier komen 3 initiatieven van type vraag te staan -->
-        <div class="items">
-            <% services.forEach(function(service) { %>
-                <!-- Laat alleen de service zien als het type een vraag is -->
-                <% if (service.type == 'aanbod' ) { %>
-
-                    <article>
-                        <% if (service.image) { %>
-                            <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>">
-                        <% } %>
-                        
-                        <div class="description">
-                            <a href="/vraag-aanbod/<%= service.id %>"><h3><%= service.title %></h3></a>
-                            <p>
-                                <span><%= service.start_date %> - <%= service.end_date %></span>
-                            </p>
+        <section>
+            <h3 class="type">Aanbod</h3>
+            <!-- Hier komen 3 initiatieven van type vraag te staan -->
+            <div class="items">
+                <% services.forEach(function(service) { %>
+                    <!-- Laat alleen de service zien als het type een vraag is -->
+                    <% if (service.type == 'aanbod' ) { %>
+    
+                        <article>
+                            <% if (service.image) { %>
+                                <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>">
+                            <% } %>
                             
-                            <p><%- service.short_description %></p>
-                        </div>
-                        
-                        <a class="btn" href="/vraag-aanbod/<%= service.id %>">Meer informatie</a>
-                    </article>
+                            <div class="description">
+                                <a href="/vraag-aanbod/<%= service.id %>"><h3><%= service.title %></h3></a>
+                                <p>
+                                    <span><%= service.start_date %> - <%= service.end_date %></span>
+                                </p>
+                                
+                                <p><%- service.short_description %></p>
+                            </div>
+                            
+                            <!-- <a class="btn" href="/vraag-aanbod/<%= service.id %>">Meer informatie</a> -->
+                        </article>
+    
+                    <% } %>
+                <% }) %>
+            </div>
+        </section>
 
-                <% } %>
-            <% }) %>
-        </div>
+        <a href="/vraag-aanbod">Bekijk vraag en aanbod ></a>
+        
     </section>
 
 
-    <section>
-        <h2>Opdracht of vraag aanvragen?</h2>
-        <button>Aanvragen</button>
+    <section class="opdrachtAanvragen">
+        <div>
+            <h2>Zelf een opdracht aanvragen?</h2>
+            <p>Wil je iets vragen aan je mede-Amsterdammers of heb je iets aan te bieden aan de gemeenschap? Dat kan hier! Klik op de onderstaande knop om je vraag of aanbod te delen met de buurt. Samen maken we Amsterdam West een nog betere plek om te wonen.</p>
+    
+            <a class="btn" href="/contact">Aanvragen</a>
+        </div>
     </section>
 </main>
 
