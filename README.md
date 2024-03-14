@@ -16,6 +16,8 @@
 <!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
+<img width="1440" alt="image" src="https://github.com/Lmikkers/server-side-rendering-server-side-website/assets/94455811/1daa1213-c5b1-4e3f-a5f7-a116666eab90">
+
 Ontwerp en ontwikkel een online platform waar buurtinitiatieven uit Oud-West een verzameld en bekeken kunnen worden. Het idee is dat het platform een soort marktplaats-achtige site moeten zijn waar vraag en aanbod bij elkaar komen, met ruimte voor uitbreiding van vraag en aanbod. Wij gaan ook bezig met data zodat wij de vraag en aanbod uit kunnen lezen bijvoorbeeld zodat de website dynamisch wordt. Hiervoor wordt een API aangemaakt door de docenten, zodat wij het uit kunnen lezen.
 
 ## Gebruik
