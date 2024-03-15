@@ -44,16 +44,20 @@ Wanneer je op de site komt, zie je goed op de homepagina wat buurtinitiatieven A
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
 1. Clone of download deze respository (fork)
 2. Openen op je code editor
+
    2.1 Dit kun je doen bij < code > (github), open met github desktop
+   
    2.2 Via Github Desktop kun je dit project dan kiezen
+   
    2.3 Rechter muisknop > Open in Visual Stude Code, bijvoorbeeld (code editor)
-3. Voordat je iets kunt veranderen, moet je eerst `Node js` instaleren, omdat we met een API werken
+   
+4. Voordat je iets kunt veranderen, moet je eerst `Node js` instaleren, omdat we met een API werken
  3.1 Installeer: nodejs.org (Node 20.11.0 LTS,)
-4. Wanneer je dit geinstaleerd hebt moet je hem nog in je code editor installeren
-5. Open terminal, en type `npm install` > installeerd `Node js`
-6. Om de site te bekijken, type je in de terminal: `npm start`
-7. Wanneer je wijzigingen aanbrengt in de `server.js`, moet je in de terminal het resetten met `control c` en daarna weer `npm start` om het project te bekijken
-8. Nu kun je aan mijn repo werken! 
+5. Wanneer je dit geinstaleerd hebt moet je hem nog in je code editor installeren
+6. Open terminal, en type `npm install` > installeerd `Node js`
+7. Om de site te bekijken, type je in de terminal: `npm start`
+8. Wanneer je wijzigingen aanbrengt in de `server.js`, moet je in de terminal het resetten met `control c` en daarna weer `npm start` om het project te bekijken
+9. Nu kun je aan mijn repo werken! 
 
 ## Bronnen
 
