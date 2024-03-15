@@ -37,6 +37,7 @@ Wanneer je op de site komt, zie je goed op de homepagina wat buurtinitiatieven A
 - HTML
 - CSS
 - Node js
+- Javascript
 - JSON
 
 ## Installatie
