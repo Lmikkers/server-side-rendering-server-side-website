@@ -47,6 +47,14 @@ main a:hover {
 img {
     max-width: 100%;
 }
+article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header {
+    margin-top: 4rem;
+}
 section {
     width: 100%;
 }
@@ -71,6 +79,11 @@ a.btn:hover {
 .center {
     text-align: center;
 }
+.alignCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .container {
     max-width: 80%;
     margin: 0 auto;
@@ -79,22 +92,10 @@ a.btn:hover {
     width: 60%;
     margin: 0 auto;
 }
-.alignCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .mBottom {
     margin-bottom: 4rem;
 }
-article img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-header {
-    margin-top: 4rem;
-}
+
 
 /* PARTIALS HEAD */
 nav {
@@ -125,7 +126,6 @@ nav ul li {
 }
 nav ul li a {
     padding: 1.4rem;
-    /* color: var(--fontColor); */
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -139,9 +139,6 @@ nav ul li a.active {
     background-color: #646464;
 }
 /* END PARTIALS HEAD */
-
-
-
 
 
 /* HOMEPAGE */
@@ -168,7 +165,6 @@ header.home article {
 header.home div:nth-child(2) {
     grid-column: 2;
     grid-row: span 2;
-    /* background-color: #5e5e5e; */
     background-image: url("/assets/images/deHallenGreen.png");
     background-position: center;
     background-size: cover;
@@ -183,14 +179,11 @@ header h2 {
 header article a {
     align-self: flex-start;
 }
-
 /* BLOCKQUOTE */
 article:has(blockquote) {
     width: 100%;
     padding: 6rem 0rem;
     background-color: var(--lightBackground);
-    /* background-color: #264031; */
-    /* color: white; */
     color: #0C0C0C;
 
     display: flex;
@@ -205,7 +198,6 @@ blockquote {
 }
 /* END BLOCKQUOTE */
 
-
 h3.type {
     margin-top: 3rem;
 }
@@ -214,7 +206,6 @@ article span {
     font-size: 1rem;
     margin-top: 0.5rem;
 }
-
 /* uitzondering dit moet later weg hierdoor zie je het 4e item niet op de home pagina */
 .home .services .items article:nth-child(4) {
     display: none;
@@ -262,20 +253,10 @@ article span {
     text-transform: unset;
     font-weight: 600;
 }
-/* deze staat voor nu uit */
-.services .items article a.btn {
-    border: none;
-    border-radius: unset;
-    background: #0C0C0C;
-    color: white;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
 /* END HOMEPAGE */
 
 
-/* OPDRACHT AANVRAGEN */
+/* OPDRACHT AANVRAGEN BLOK */
 .opdrachtAanvragen {
     width: 100%;
     background-color: var(--lightBackground);
@@ -296,6 +277,9 @@ article span {
 
 
 /* DETAIL PAGINA */
+.detail section {
+    padding: 4rem 0;
+}
 .detailHeader {
     width: 100%;
     height: calc(100vh - 4rem);
@@ -308,11 +292,6 @@ article span {
     grid-template-columns: 2fr 1fr;
     grid-gap: 4rem;
 }
-
-.detail section {
-    padding: 4rem 0;
-}
-
 .detailHeader h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -426,8 +405,6 @@ article span {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
-
-
 /* END DETAIL PAGINA */
 
 
@@ -544,11 +521,6 @@ footer ul li {
 
 
 
-
-
-
-
-
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 /* RESPONSIVE */
 
@@ -564,7 +536,6 @@ footer ul li {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
     }
-
 }
 
 /* MOBIEL */
